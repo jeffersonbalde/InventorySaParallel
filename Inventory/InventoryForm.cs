@@ -34,8 +34,13 @@ namespace Inventory
             conn1.Open();
             try
             {
+                if(txtItem.Text == "" || txtUnit.Text == "")
+                {
+                    MessageBox.Show("Please fill up item and unit fields");
+                    return;
+                }
                 cmd = conn1.CreateCommand();
-                cmd.CommandText = "INSERT INTO iteminventory(date,prodcode,description,item,class,size,casee,packs,itemclass,packaging,unit,price,total)VALUES('" + date.Value.ToString("yyyy-MM-dd") + "','" + txtProdcode.Text + "','" + txtDescription.Text + "','" + txtItem.Text + "','" + cboClass.Text + "','" + txtSize.Text + "','" + txtCase.Text + "','" + txtPacks.Text + "','" + cboItemClass.Text + "','" + cboPackaging.Text + "','" + txtUnit.Text + "','" + double.Parse(txtPrice.Text) + "','" + double.Parse(txtTotal.Text) + "')";
+                cmd.CommandText = "INSERT INTO iteminventory(date,prodcode,description,item,class,size,casee,packs,itemclass,packaging,unit,price,total)VALUES('" + date.Value.ToString("yyyy-MM-dd") + "','" + txtProdcode.Text + "','" + txtDescription.Text + "','" + txtItem.Text + "','" + cboClass.Text + "','" + txtSize.Text + "','" + txtCase.Text + "','" + txtPacks.Text + "','" + cboItemClass.Text + "','" + cboPackaging.Text + "','" + txtUnit.Text + "','" + txtPrice.Text + "','" + txtTotal.Text + "')";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("SAVE");
 

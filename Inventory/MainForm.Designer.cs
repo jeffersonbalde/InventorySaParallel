@@ -278,6 +278,7 @@
             this.btnStockOut.Text = "Stock Out";
             this.btnStockOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStockOut.UseVisualStyleBackColor = false;
+            this.btnStockOut.Click += new System.EventHandler(this.btnStockOut_Click);
             // 
             // btnStockIn
             // 
@@ -294,6 +295,7 @@
             this.btnStockIn.Text = "Stock In";
             this.btnStockIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStockIn.UseVisualStyleBackColor = false;
+            this.btnStockIn.Click += new System.EventHandler(this.btnStockIn_Click);
             // 
             // btnInventory
             // 
@@ -327,6 +329,7 @@
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // panel1
             // 
@@ -365,6 +368,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INVENTORY";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
