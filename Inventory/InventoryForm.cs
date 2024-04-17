@@ -77,6 +77,7 @@ namespace Inventory
                     i++;
                     dataGridView1.Rows.Add(i, readerauj["item"].ToString(), readerauj["unit"].ToString(), int.Parse(readerauj["quantity"].ToString()));
                 }
+
                 connauj.Close();
             }
             catch (Exception ex)
