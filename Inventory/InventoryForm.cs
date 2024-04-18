@@ -24,7 +24,8 @@ namespace Inventory
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            txtItem.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtUnit.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -91,5 +92,24 @@ namespace Inventory
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //MySqlConnection conzx = new MySqlConnection(connection);
+            //MySqlCommand cmd = new MySqlCommand("update estimate set htag=@name,qty=@state,item=@item where iop=@id", conzx);
+            //conzx.Open();
+            //cmd.Parameters.AddWithValue("@id", label3.Text);
+            //cmd.Parameters.AddWithValue("@name", pname.Text);
+            //cmd.Parameters.AddWithValue("@state", xqty.Text);
+            //cmd.Parameters.AddWithValue("@item", xitem.Text);
+            //cmd.ExecuteNonQuery();
+            //MessageBox.Show("Record Updated Successfully");
+            //conzx.Close();
+            //views();
+            //pname.Text = "";
+            //xitem.Text = "";
+            //xqty.Text = "";
+            //label3.Text = "000";
+
+        }
     }
 }
