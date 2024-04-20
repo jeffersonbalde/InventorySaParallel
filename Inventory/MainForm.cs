@@ -71,6 +71,7 @@ namespace Inventory
             StockInForm frm = new StockInForm();
             frm.TopLevel = false;
             panel1.Controls.Add(frm);
+            frm.views();
             frm.BringToFront();
             frm.Show();
         }
