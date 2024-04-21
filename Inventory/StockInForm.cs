@@ -149,34 +149,34 @@ namespace Inventory
                 return;
             }
 
-            try
-            {
-                MySqlConnection conzx = new MySqlConnection(connection);
-                MySqlCommand cmd = new MySqlCommand("update itemstockin set prodcode=@prodcode,description=@description,item=@item,class=@class,size=@size,casee=@casee,packs=@packs,itemclass=@itemclass,packaging=@packaging,unit=@unit,price=@price,total=@total where ID=@ID", conzx);
-                conzx.Open();
-                cmd.Parameters.AddWithValue("@prodcode", txtProdcode.Text);
-                cmd.Parameters.AddWithValue("@description", txtDescription.Text);
-                cmd.Parameters.AddWithValue("@item", txtItem.Text);
-                cmd.Parameters.AddWithValue("@class", cboClass.Text);
-                cmd.Parameters.AddWithValue("@size", txtSize.Text);
-                cmd.Parameters.AddWithValue("@casee", txtCase.Text);
-                cmd.Parameters.AddWithValue("@packs", txtPacks.Text);
-                cmd.Parameters.AddWithValue("@itemclass", cboClass.Text);
-                cmd.Parameters.AddWithValue("@packaging", cboPackaging.Text);
-                cmd.Parameters.AddWithValue("@unit", txtUnit.Text);
-                cmd.Parameters.AddWithValue("@price", txtPrice.Text);
-                cmd.Parameters.AddWithValue("@total", txtTotal.Text);
-                cmd.Parameters.AddWithValue("@ID", txtID.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Record Updated Successfully");
-                conzx.Close();
-                views();
-                clear();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    MySqlConnection conzx = new MySqlConnection(connection);
+            //    MySqlCommand cmd = new MySqlCommand("update itemstockin set prodcode=@prodcode,description=@description,item=@item,class=@class,size=@size,casee=@casee,packs=@packs,itemclass=@itemclass,packaging=@packaging,unit=@unit,price=@price,total=@total where ID=@ID", conzx);
+            //    conzx.Open();
+            //    cmd.Parameters.AddWithValue("@prodcode", txtProdcode.Text);
+            //    cmd.Parameters.AddWithValue("@description", txtDescription.Text);
+            //    cmd.Parameters.AddWithValue("@item", txtItem.Text);
+            //    cmd.Parameters.AddWithValue("@class", cboClass.Text);
+            //    cmd.Parameters.AddWithValue("@size", txtSize.Text);
+            //    cmd.Parameters.AddWithValue("@casee", txtCase.Text);
+            //    cmd.Parameters.AddWithValue("@packs", txtPacks.Text);
+            //    cmd.Parameters.AddWithValue("@itemclass", cboClass.Text);
+            //    cmd.Parameters.AddWithValue("@packaging", cboPackaging.Text);
+            //    cmd.Parameters.AddWithValue("@unit", txtUnit.Text);
+            //    cmd.Parameters.AddWithValue("@price", txtPrice.Text);
+            //    cmd.Parameters.AddWithValue("@total", txtTotal.Text);
+            //    cmd.Parameters.AddWithValue("@ID", txtID.Text);
+            //    cmd.ExecuteNonQuery();
+            //    MessageBox.Show("Record Updated Successfully");
+            //    conzx.Close();
+            //    views();
+            //    clear();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }
