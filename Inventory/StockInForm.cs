@@ -32,6 +32,38 @@ namespace Inventory
             txtCareOf.Text = "";
         }
 
+        public void LoadTotal()
+        {
+            int total;
+            MySqlConnection connauj = new MySqlConnection(connection);
+            connauj.Open();
+            //try
+            //{
+
+                MySqlCommand Comauj = new MySqlCommand() { Connection = connauj, CommandText = "SELECT * from iteminventory where  item ='" + txtItem.Text + "'" };
+                MySqlDataReader readerauj = Comauj.ExecuteReader();
+                while (readerauj.Read())
+                {
+                    try
+                    {
+                        total = int.Parse(readerauj["quantity"].ToString());
+                        int addqty = int.Parse(txtAddedQuantity.Text);
+                        double result = total + addqty;
+                        txtTotal.Text = result.ToString();
+                    }
+                    catch(Exception ex)
+                    {
+                        txtAddedQuantity.Text = "";
+                    }
+                }
+                connauj.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+        }
+
         public void LoadItemUnitAndQuantity()
         {
             MySqlConnection connauj = new MySqlConnection(connection);
@@ -204,6 +236,34 @@ namespace Inventory
         private void buttonInRpt_Click(object sender, EventArgs e)
         {
             MessageBox.Show("working pa");
+        }
+
+        private void StockInForm_Load(object sender, EventArgs e)
+        {
+            auto1();
+        }
+
+        public void auto1()
+        {
+            MySqlConnection conn1 = new MySqlConnection(connection);
+            MySqlCommand cmd = new MySqlCommand("SELECT item from iteminventory", conn1);
+            conn1.Open();
+            AutoCompleteStringCollection strcol = new AutoCompleteStringCollection();
+            MySqlDataReader myReader = cmd.ExecuteReader();
+            
+            while(myReader.Read())
+            {
+                strcol.Add(myReader.GetString(0));
+            }
+            txtItem.AutoCompleteCustomSource = strcol;
+            txtItem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtItem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            conn1.Close();
+        }
+
+        private void txtAddedQuantity_TextChanged(object sender, EventArgs e)
+        {
+            LoadTotal();
         }
     }
 }
