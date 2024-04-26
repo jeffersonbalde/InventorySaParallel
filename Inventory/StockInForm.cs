@@ -141,7 +141,7 @@ namespace Inventory
             {
                 int i = 0;
                 dataGridView1.Rows.Clear();
-                MySqlCommand Comauj = new MySqlCommand() { Connection = connauj, CommandText = "SELECT * from itemstockin" };
+                MySqlCommand Comauj = new MySqlCommand() { Connection = connauj, CommandText = "SELECT * from itemstockin WHERE date LIKE '" + date.Value.ToString("yyyy-MM-dd") + "%'" };
                 MySqlDataReader readerauj = Comauj.ExecuteReader();
                 while (readerauj.Read())
                 {
@@ -235,7 +235,8 @@ namespace Inventory
 
         private void buttonInRpt_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("working pa");
+            ReportStockIn frm = new ReportStockIn();
+            frm.Show();
         }
 
         private void StockInForm_Load(object sender, EventArgs e)
