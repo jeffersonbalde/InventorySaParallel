@@ -208,6 +208,7 @@ namespace Inventory
         private void btnCashRpt_Click(object sender, EventArgs e)
         {
             MessageBox.Show("working pa");
+
         }
     }
 }
