@@ -242,6 +242,7 @@ namespace Inventory
         private void StockInForm_Load(object sender, EventArgs e)
         {
             auto1();
+            auto2();
         }
 
         public void auto1()
@@ -265,6 +266,24 @@ namespace Inventory
         private void txtAddedQuantity_TextChanged(object sender, EventArgs e)
         {
             LoadTotal();
+        }
+
+        public void auto2()
+        {
+            MySqlConnection conn1 = new MySqlConnection(connection);
+            MySqlCommand cmd = new MySqlCommand("SELECT careof from itemstockin", conn1);
+            conn1.Open();
+            AutoCompleteStringCollection strcol = new AutoCompleteStringCollection();
+            MySqlDataReader myReader = cmd.ExecuteReader();
+
+            while (myReader.Read())
+            {
+                strcol.Add(myReader.GetString(0));
+            }
+            txtCareOf.AutoCompleteCustomSource = strcol;
+            txtCareOf.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtCareOf.AutoCompleteMode = AutoCompleteMode.Suggest;
+            conn1.Close();
         }
     }
 }
