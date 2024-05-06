@@ -34,7 +34,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.lblName);
-            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.lblPosition);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -78,7 +78,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.Window;
             this.label9.Location = new System.Drawing.Point(1, 1);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(604, 42);
+            this.label9.Size = new System.Drawing.Size(408, 42);
             this.label9.TabIndex = 7;
             this.label9.Text = "INVENTORY SA PARALLEL";
             // 
@@ -118,16 +118,16 @@
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Ngalan sa user";
             // 
-            // label13
+            // lblPosition
             // 
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(637, 6);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(146, 35);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "User /";
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblPosition.Font = new System.Drawing.Font("Segoe UI", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.Color.White;
+            this.lblPosition.Location = new System.Drawing.Point(456, 6);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(273, 35);
+            this.lblPosition.TabIndex = 2;
+            this.lblPosition.Text = "User /";
             // 
             // panel3
             // 
@@ -387,7 +387,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.Label lblName;
-        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
@@ -396,13 +396,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnQuit;
-        private System.Windows.Forms.Button btnStockOut;
-        private System.Windows.Forms.Button btnStockIn;
-        private System.Windows.Forms.Button btnInventory;
-        private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnReport;
+        public System.Windows.Forms.Button btnQuit;
+        public System.Windows.Forms.Button btnStockOut;
+        public System.Windows.Forms.Button btnStockIn;
+        public System.Windows.Forms.Button btnInventory;
+        public System.Windows.Forms.Button btnDashboard;
     }
 }

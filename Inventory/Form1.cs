@@ -41,16 +41,27 @@ namespace Inventory
             cmd.Connection = con;
 
             string name = "";
+            string postion = "";
 
             try
             {
-                cmd.CommandText = "SELECT name, username, password FROM accounts WHERE username ='" + textBox1.Text + "'  and password='" + textBox2.Text + "'";
+                cmd.CommandText = "SELECT * FROM accounts WHERE username ='" + textBox1.Text + "'  and password='" + textBox2.Text + "'";
                 cmd.CommandTimeout = 3600;
                 MySqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
                     name = dr["name"].ToString();
+                    postion = dr["position"].ToString();
                     MainForm h = new MainForm();
+                    if(postion != "System Administrator")
+                    {
+                        h.btnDashboard.Enabled = false;
+                        h.btnStockIn.Enabled = false;
+                        h.btnStockOut.Enabled = false;
+                        h.btnReport.Enabled = false;
+                        h.btnInventory.Enabled = false;
+                    }
+                    h.lblPosition.Text = postion;
                     h.lblName.Text = name;
                     this.Hide();
                     h.Show();

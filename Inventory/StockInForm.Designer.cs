@@ -35,6 +35,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockInForm));
             this.labelSearch = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.DateTimePicker();
@@ -84,6 +85,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(171)))), ((int)(((byte)(227)))));
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txtQuantity);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.date);
@@ -96,6 +98,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(632, 244);
             this.panel2.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Snow;
+            this.label8.Location = new System.Drawing.Point(89, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 32);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "From";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtQuantity
             // 
@@ -124,8 +138,9 @@
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date.Location = new System.Drawing.Point(158, 30);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(443, 38);
+            this.date.Size = new System.Drawing.Size(176, 38);
             this.date.TabIndex = 48;
+            this.date.ValueChanged += new System.EventHandler(this.date_ValueChanged);
             // 
             // label4
             // 
@@ -516,5 +531,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewImageColumn select;
+        private System.Windows.Forms.Label label8;
     }
 }

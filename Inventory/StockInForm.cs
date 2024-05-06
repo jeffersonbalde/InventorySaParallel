@@ -20,6 +20,7 @@ namespace Inventory
         public StockInForm()
         {
             InitializeComponent();
+
         }
 
         public void clear()
@@ -141,7 +142,7 @@ namespace Inventory
             {
                 int i = 0;
                 dataGridView1.Rows.Clear();
-                MySqlCommand Comauj = new MySqlCommand() { Connection = connauj, CommandText = "SELECT * from itemstockin WHERE date LIKE '" + date.Value.ToString("yyyy-MM-dd") + "%'" };
+                MySqlCommand Comauj = new MySqlCommand() { Connection = connauj, CommandText = "SELECT * from itemstockin WHERE date LIKE '" + date.Value.ToString("yyyy-MM-dd") + "%'"};
                 MySqlDataReader readerauj = Comauj.ExecuteReader();
                 while (readerauj.Read())
                 {
@@ -284,6 +285,21 @@ namespace Inventory
             txtCareOf.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtCareOf.AutoCompleteMode = AutoCompleteMode.Suggest;
             conn1.Close();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void date_ValueChanged(object sender, EventArgs e)
+        {
+            views();
+        }
+
+        private void date2_ValueChanged(object sender, EventArgs e)
+        {
+            views();
         }
     }
 }
