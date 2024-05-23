@@ -80,6 +80,20 @@ namespace Inventory
         {
             panel1.Controls.Clear();
             StockOutForm frm = new StockOutForm();
+            frm.views();
+            frm.TopLevel = false;
+            panel1.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Report frm = new Report();
+            frm.viewsItem();
+            frm.viewsStockIn();
+            frm.viewsStockOut();
             frm.TopLevel = false;
             panel1.Controls.Add(frm);
             frm.BringToFront();

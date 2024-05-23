@@ -113,11 +113,31 @@
     <Compile Include="mysql.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportItemInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportItemInventory.Designer.cs">
+      <DependentUpon>ReportItemInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportStockIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportStockIn.Designer.cs">
       <DependentUpon>ReportStockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStockoutcs.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ReportStockoutcs.Designer.cs">
+      <DependentUpon>ReportStockoutcs.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StockInForm.cs">
@@ -155,12 +175,29 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Itemstockin.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Itemstockout.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Iteminventory.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportItemInventory.resx">
+      <DependentUpon>ReportItemInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportStockIn.resx">
       <DependentUpon>ReportStockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportStockoutcs.resx">
+      <DependentUpon>ReportStockoutcs.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="StockInForm.resx">
       <DependentUpon>StockInForm.cs</DependentUpon>
@@ -194,6 +231,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\prod.png" />
+    <None Include="Resources\stock.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
